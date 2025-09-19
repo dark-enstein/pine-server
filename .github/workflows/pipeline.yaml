@@ -1,0 +1,26 @@
+name: Deploy to GCP VM
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+env:
+  IMAGE: ghcr.io/pine-server:latest
+  CONTAINER_NAME: fastapi-app
+  APP_PORT: "8000"     # container port
+  HOST_PORT: "80"      # public port on VM
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write   # needed for GHCR
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy on GCP VM via SSH
+        run: |
+          sh deploy.sh
