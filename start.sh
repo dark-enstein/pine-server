@@ -17,5 +17,5 @@ pip install "fastapi[all]"
 pip install git+https://github.com/BiomedSciAI/biomed-multi-alignment.git $SILENT
 }
 
-install_deps
+#install_deps
 start_app

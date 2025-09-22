@@ -1,5 +1,6 @@
 venv/
 venv/bin venv/include venv/lib venv/pyvenv.cfg
 __pycache__/main.cpython-313.pyc
+__pycache__/**
 */__pycache__/**
 .token
